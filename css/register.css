@@ -1,0 +1,110 @@
+body{
+    background-image: url(../image/background-login.avif);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#wrapper{
+    min-height: 100vh; /* Đặt độ cao tối thiểu là 100vh = 100% màn hình (viewport height)*/
+    display: flex; /* dùng flex để tạo bố cục chiều dọc*/
+    align-items: center; /*căn giữa chiều dọc nè*/
+    justify-content: center; /* Căn giữa chiều ngang*/
+}
+.container{
+    display: flex;
+    background: rgba(0, 0, 0, 0.65);  /*đen độ trong 65%*/
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+    border-radius: 17px;  
+}
+#form-login{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    padding: 10px 20px 30px 20px;
+}
+.Terms{
+    display: flex;
+    color: white;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.Terms label{
+    margin-left: 5px;
+}
+.form-heading{
+    font-size: 40px;
+    text-align: center;
+    background-image: url(../image/img1.jpg);
+    margin-bottom: 30px;
+    background-size: cover;/*phóng to/thu nhỏ ảnh nền/nó phủ kín toàn bộ phần tử.*/
+    -webkit-background-clip: text;/*cho phép ảnh nền chỉ hiển thị bên trong phần chữ*/
+    color: transparent;/*màu chữ mặc định trở thành trong suốt*/
+} /*nếu ko có color transparent thì màu chữ mặc định là màu đen*/
+.form-input{
+    background: transparent;/* màu trong suốt*/
+    border: 0;
+    outline: 0;/*tắt cái viền ngoài đi*/
+    flex-grow: 1;/* Để ô input tự động kéo dài ra */
+    font-size: 16px;
+    transition:all 1s ease; 
+}
+.form-input:hover{
+    transform: scale(1.05);
+}
+.highlightwhite{
+    color: white;
+    padding-right: 15px;
+}
+.form-group {
+    border-bottom: 1px solid #fff; /* Đường gạch dưới */
+    display: flex;                 /* Đưa các phần tử bên trong lên cùng 1 hàng ngang */
+    align-items: center;           /* Căn giữa các phần tử theo chiều dọc */
+    margin-bottom: 25px;           /* Tạo khoảng cách giữa ô Username và Password */
+}
+.form-group ::placeholder{
+    color: rgb(127, 237, 119);
+}
+.form-submit{
+    background: transparent;
+    border: 1px solid #f5f5f5f5;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.form-submit:hover{
+    border: 1px solid rgb(0, 0, 0);
+    background: rgb(72, 115, 7);
+    scale: 1.0567;
+     box-shadow: 0 4px 15px rgba(251, 246, 246, 0.873);
+}
+.Haveacc a,p{
+    color: white;
+    text-decoration-color: rgb(28, 59, 231);
+    display: inline;
+}
+.Haveacc {
+    margin-left: 70px;
+    margin-top: 10px;
+}
+.Haveacc a:hover{
+    color: chartreuse;
+}
+.Terms-content{
+    margin-left: 80px;
+    margin-top: 10px;
+}
+.Terms-content a{
+    color: #fff;
+    text-decoration-color: blue;
+}
+.Terms-content a:hover{
+    color: chartreuse;
+}
+.Terms-content .TOU{
+    border-right: 1px solid ;
+    padding-right: 5px;
+}

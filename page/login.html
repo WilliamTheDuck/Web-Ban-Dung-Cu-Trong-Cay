@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Đăng nhập</title>
+  </head>
+  <body>
+    <header>
+      <nav class="menu">
+        <div class="logo">Green</div>
+         <ul class="menu">
+            <li><a class="active" href="#">Trang chủ</a></li>
+            <li><a href="#">Sản phẩm</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+        <div><i class="fa-solid fa-user"></i></div>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <div class="container">
+        <form action="" id="form-login">
+          <h1 class="form-heading">LOGIN</h1>
+          <div class="form-group">
+            <i
+              class="fa-solid fa-user highlightwhite"
+              style="padding-right: 15px"
+            ></i>
+            <input
+              type="text"
+              style="color: white"
+              class="form-input"
+              placeholder="Username or Email"
+            />
+          </div>
+          <div class="form-group">
+            <i
+              class="fa-solid fa-lock highlightwhite"
+              style="padding-right: 15px"
+            ></i>
+            <input
+              type="password"
+              style="color: white"
+              class="form-input"
+              id="password"
+              placeholder="Password"
+            />
+            <span id="toggle"
+              ><i class="fa-solid fa-eye highlightwhite"></i
+            ></span>
+          </div>
+          <input type="submit" value="Đăng nhập" class="form-submit" />
+          <div class="remember">
+            <div class="check-rem">
+              <input type="checkbox" name="Remember me" class="rmb" />
+              <label>Remember me</label>
+            </div>
+            <a href="">Forgot your password?</a>
+          </div>
+          <div class="Dontacc">
+            <a href="register.html">Tôi không có tài khoản</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="../js/login.js"></script>
+    <footer>
+      <div class="content-foot">
+        <div class="Info">
+          <h3>Nhóm NMLTW</h3>
+          <p>bhdshfbsdbvndfnvdfbicbhisbdvc</p>
+          <div>
+            <i class="fa-solid fa-location-dot"></i> <span>Địa chỉ</span>
+          </div>
+          <br />
+          <div>
+            <i class="fa-solid fa-phone-volume"></i> <span>0909029309</span>
+          </div>
+        </div>
+        <div>
+          <h3>Về chúng tôi</h3>
+          <ul>
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Sản phẩm</a></li>
+            <li><a href="">Giới thiệu</a></li>
+          </ul>
+        </div>
+        <div class="Internet">
+          <h3>Mạng xã hội</h3>
+          <ul>
+            <li>
+              <a href=""><i class="fa-brands fa-square-twitter"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-square-youtube"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-square-github"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright"><p>&copy; 2026 Nhóm NMLTW.</p></div>
+    </footer>
+  </body>
+</html>
