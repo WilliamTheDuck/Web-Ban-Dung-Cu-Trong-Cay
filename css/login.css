@@ -35,7 +35,7 @@ body{
     color: rgb(154, 215, 154);
 }
 .form-input{
-    background: transparent;/* màu trong suốt*/
+    background:transparent;/* màu trong suốt*/
     border: 0;
     outline: 0;/*tắt cái viền ngoài đi*/
     flex-grow: 1;/* Để ô input tự động kéo dài ra */
@@ -50,10 +50,10 @@ body{
     padding-right: 15px;
 }
 .form-group{
-    border-bottom: 1px solid #fff; /* Đường gạch dưới */
-    display: flex;                 /* Đưa các phần tử bên trong lên cùng 1 hàng ngang */
-    align-items: center;           /* Căn giữa các phần tử theo chiều dọc */
-    margin-bottom: 25px;           /* Tạo khoảng cách giữa ô Username và Password */
+    border-bottom:1px solid #fff; /* Đường gạch dưới */
+    display: flex;/* Đưa các phần tử bên trong lên cùng 1 hàng ngang */
+    align-items: center;/* Căn giữa các phần tử theo chiều dọc */
+    margin-bottom: 25px;/* Tạo khoảng cách giữa ô Username và Password */
 }
 .form-group ::placeholder{
     color: green;
@@ -74,7 +74,6 @@ body{
     scale: 1.0567;
     box-shadow: 0 4px 15px rgba(251, 246, 246, 0.873);
 }
-
 /* ---- riêng của trang Login ---- */
 .remember{
     display: flex;
@@ -114,7 +113,6 @@ body{
 .Dontacc a:hover{
     color: chartreuse;
 }
-
 /* ---- riêng của trang Register ---- */
 .Terms{
     display: flex;
@@ -172,11 +170,11 @@ footer .content-foot{
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;/* căn giữa nội dung, footer vẫn full màn hình */
     padding: 40px 60px;
     gap: 20px;
-    box-sizing: border-box;
+    box-sizing:border-box;
 }
 footer .content-foot h3,
 footer .content-foot strong{
@@ -199,7 +197,7 @@ footer .content-foot ul li{
 /* chỉnh màu chữ ở đây nữa */
 footer .content-foot a{
     color: gray;
-    text-decoration: none;
+    text-decoration:none;
     font-size: 15px;
     transition: color 0.3s ease;
 }
@@ -260,10 +258,14 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 10px; /*Chỉnh répone nè*/
-    padding: 15px 25px; /* chỉnh  responsive nè*/
+    font-size: 10px;/*Chỉnh répone nè*/
+    /* margin: 10px 0px; */
+    padding: 15px 25px;/* chỉnh  responsive nè*/
 }
-.menu ul li{
+.nav-menu{
+    display: flex;
+    align-items: center;
+    gap: 40px;/* khoảng cách giữa các mục */
     list-style: none;
 }
 .menu a{
@@ -287,5 +289,11 @@ header{
     footer .content-foot{
         flex-direction: column;
         padding: 30px 20px;
+    }
+}
+@media (min-width: 600px){
+    .menu{
+        font-size: large;
+        
     }
 }
