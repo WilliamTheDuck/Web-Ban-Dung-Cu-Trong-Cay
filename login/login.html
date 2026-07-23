@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập - GreenCare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Background image for login page */
+        body {
+            background-image: url('6295a51a-19e0-4979-9a97-5b4db604f6b5.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        /* Dark overlay to make form readable */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            /* backdrop-filter: blur(4px); */
+            z-index: -1;
+        }
+
+        /* Glass effect for form container */
+        .form-container {
+            background: rgba(38, 48, 20, 0.55);
+            backdrop-filter: blur(4px);
+            /* -webkit-backdrop-filter: blur(12px); */
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            padding: 35px !important;
+        }
+
+        /* Style labels for readability */
+        .form-container label {
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+
+        /* Style input fields for glass effect */
+        .form-container .form-control {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            border-radius: 10px;
+            backdrop-filter: blur(8px);
+        }
+
+        .form-container .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-container .form-control:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+            box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
+        }
+
+        .form-container .form-control:focus {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.5);
+            color: #fff;
+            box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.1);
+        }
+
+        /* Style heading */
+        .form-container h2 {
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* Style login button */
+        .btn-primary-custom {
+            background: rgba(48, 182, 41, 0.7);
+            border: none;
+            border-radius: 10px;
+            backdrop-filter: blur(4px);
+            font-weight: bold;
+            color: #fff;
+            transition: ease 0.5s;
+        }
+
+        .btn-primary-custom:hover {
+            background: rgba(72, 211, 105, 0.9);
+            border: none;
+            color: #fff;
+            transform: scale(1.05)
+        }
+
+        /* Style links */
+        .form-container a {
+            color: #8fd3f4;
+        }
+
+        .form-container a:hover {
+            color: #a8e6cf;
+        }
+
+        /* Style demo alert box */
+        .alert-info {
+            background: rgba(78, 170, 12, 0.25);
+            border: 1px solid rgba(90, 184, 23, 0.5);
+            color: #e0f7fa;
+            backdrop-filter: blur(8px);
+        }
+        /* Cow click effect - pure CSS */
+        #cowEffectCheck {
+            display: none;
+        }
+
+        .cow-trigger {
+            cursor: pointer;
+            display: inline-block;
+            transition: transform 0.2s;
+            font-size: 3rem;
+        }
+
+        .cow-trigger:hover {
+            transform: scale(1.2) rotate(-5deg);
+        }
+
+        #cowEffectCheck:checked ~ main .form-container .cow-trigger {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .cow-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            visibility: hidden;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        #cowEffectCheck:checked ~ .cow-rain {
+            visibility: visible;
+            opacity: 1;
+            animation: rainLifecycle 3s forwards;
+        }
+
+        .cow-rain-item {
+            position: absolute;
+            top: -50px;
+            font-size: 28px;
+            animation: cowFall linear infinite;
+            opacity: 0.9;
+        }
+
+        .cow-rain-item:nth-child(1) { left: 5%; animation-duration: 2s; animation-delay: 0s; }
+        .cow-rain-item:nth-child(2) { left: 15%; animation-duration: 2.3s; animation-delay: 0.1s; }
+        .cow-rain-item:nth-child(3) { left: 25%; animation-duration: 1.8s; animation-delay: 0.3s; }
+        .cow-rain-item:nth-child(4) { left: 35%; animation-duration: 2.5s; animation-delay: 0.2s; }
+        .cow-rain-item:nth-child(5) { left: 45%; animation-duration: 2.1s; animation-delay: 0.4s; }
+        .cow-rain-item:nth-child(6) { left: 55%; animation-duration: 2.7s; animation-delay: 0.1s; }
+        .cow-rain-item:nth-child(7) { left: 65%; animation-duration: 1.9s; animation-delay: 0.5s; }
+        .cow-rain-item:nth-child(8) { left: 75%; animation-duration: 2.4s; animation-delay: 0.3s; }
+        .cow-rain-item:nth-child(9) { left: 85%; animation-duration: 2.2s; animation-delay: 0.2s; }
+        .cow-rain-item:nth-child(10) { left: 95%; animation-duration: 2.6s; animation-delay: 0.4s; }
+        .cow-rain-item:nth-child(11) { left: 10%; animation-duration: 2.8s; animation-delay: 0.6s; }
+        .cow-rain-item:nth-child(12) { left: 30%; animation-duration: 2.0s; animation-delay: 0.7s; }
+        .cow-rain-item:nth-child(13) { left: 50%; animation-duration: 2.3s; animation-delay: 0.5s; }
+        .cow-rain-item:nth-child(14) { left: 70%; animation-duration: 1.7s; animation-delay: 0.8s; }
+        .cow-rain-item:nth-child(15) { left: 90%; animation-duration: 2.5s; animation-delay: 0.6s; }
+
+        @keyframes cowFall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        @keyframes rainLifecycle {
+            0%, 75% {
+                visibility: visible;
+                opacity: 1;
+            }
+            100% {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+
+        .cow-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #cowEffectCheck:checked ~ .cow-popup {
+            opacity: 1;
+            visibility: visible;
+            animation: popupLifecycle 3s forwards;
+        }
+
+        .cow-popup-content {
+            position: relative;
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .cow-popup-content img {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            animation: cowSpin 0.5s linear infinite;
+        }
+
+        @keyframes cowSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .cow-popup-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            font-weight: bold;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .cow-popup-close:hover {
+            color: #ff4444;
+        }
+
+        @keyframes popupLifecycle {
+            0% {
+                opacity: 0;
+                visibility: hidden;
+            }
+            10% {
+                opacity: 1;
+                visibility: visible;
+            }
+            85% {
+                opacity: 1;
+                visibility: visible;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+    <body>
+    <input type="checkbox" id="cowEffectCheck" class="cow-effect-checkbox">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="../home/home.html">GreenCare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../home/home.html">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../product/product.html">Sản Phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../info/info.html">Thông Tin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact/contact.html">Liên Hệ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../cart/cart.html">Giỏ Hàng <span class="badge bg-secondary" id="cartBadge">0</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="login.html">Đăng Nhập</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="form-container">
+            <h2>Đăng Nhập</h2>
+            <label for="cowEffectCheck" class="cow-trigger">🐄</label>
+            <div id="alertMessage"></div>
+
+            <div class="alert alert-info">
+                <strong>Tài Khoản Demo:</strong><br>
+                Email: demo@gmail.com<br>
+                Mật khẩu: 12345678
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" value="demo@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mật Khẩu</label>
+                    <input type="password" id="password" class="form-control" value="123456" required>
+                </div>
+                <button type="submit" class="btn btn-primary-custom w-100 py-2">Đăng Nhập</button>
+            </form>
+            <p class="text-center mt-3">
+                Chưa có tài khoản?
+                <a href="../register/register.html" class="text-primary-custom fw-bold">Đăng Ký Ngay</a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="bg-primary-custom text-white mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>GreenCare</h5>
+                    <p class="small footer-text-light">Phụ kiện chăm sóc cây cảnh cao cấp cho mọi nhà</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6>Liên Kết</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="../info/info.html" class="footer-text">Về Chúng Tôi</a></li>
+                        <li><a href="../info/info.html" class="footer-text">Chính Sách Bảo Mật</a></li>
+                        <li><a href="../info/info.html" class="footer-text">Điều Khoản Dịch Vụ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6>Liên Hệ</h6>
+                    <p class="small footer-text-light">Email: info@greencare.com<br>Phone: 1900 1234</p>
+                </div>
+            </div>
+            <hr class="border border-light-subtle">
+            <p class="text-center small mb-0 footer-text-light">&copy; 2024 GreenCare. Bảo lưu mọi quyền.</p>
+        </div>
+    </footer>
+
+    <div class="cow-rain">
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+        <span class="cow-rain-item">🐄</span>
+    </div>
+
+    <div class="cow-popup">
+        <label for="cowEffectCheck" class="cow-popup-close">&times;</label>
+        <div class="cow-popup-content">
+            <img src="cow.jpg" alt="Cow" />
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../data.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>
