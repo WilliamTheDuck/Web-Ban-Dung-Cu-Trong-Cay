@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ - GreenCare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary-custom sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="home.html">GreenCare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="home.html">Trang Chủ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../product/product.html">Sản Phẩm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../info/info.html">Thông Tin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../contact/contact.html">Liên Hệ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../cart/cart.html">Giỏ Hàng <span class="badge bg-secondary" id="cartBadge">0</span></a></li>
+                    <li class="nav-item" id="userMenu"><a class="nav-link" href="../login/login.html">Đăng Nhập</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="top-home">
+            <h1 class="top-text">
+                GreenCare
+            </h1>
+            <p>Phụ Kiện Chăm Sóc Cây Cảnh Cao Cấp</p>
+            <div class="container mt-4">
+                <div id="carouselExample" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="Picture1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Picture2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="Picture3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+            
+
+            <a class="btn-cart" href="../product/product.html">Khám Phá Sản Phẩm</a>
+        </section>
+
+
+        <section class="main-center">
+            <h2 class="main-title">Tại sao chọn GreenCare ?</h2>
+            <div class="container my-5">
+                <!-- Row là hàng, g-4 tạo khoảng cách giữa các ô -->
+                <div class="row g-4">
+                    
+                    <!-- Cột: Điện thoại (12/12), Máy tính bảng (6/12), Máy tính PC (3/12) -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">Chất Lượng Cao Cấp</h5>
+                                <p class="card-text text-muted">Sản phẩm chính hãng từ các thương hiệu nổi tiếng</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">Giá Cả Hợp Lý</h5>
+                                <p class="card-text text-muted">Giá tốt nhất trên thị trường với chất lượng đảm bảo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">Giao Hàng Nhanh</h5>
+                                <p class="card-text text-muted">Miễn phí vận chuyển cho đơn hàng trên 500K</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">Hỗ Trợ 24/7</h5>
+                                <p class="card-text text-muted">Đội ngũ chuyên viên sẵn sàng giúp đỡ bạn</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="main-finnal">
+            <h2 class="main-title">Sản Phẩm Nổi Bật</h2>
+            <div class="container">
+                <div class="row g-4">
+                    
+                    <!-- Sản phẩm 1 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="https://caydeban.com.vn/image/catalog/products/sen-da/_MG_9158.jpg" class="card-img-top" alt="Sản phẩm">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">Cây Sen Đá</h5>
+                                <p class="text-price" >150.000 ₫</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sản phẩm 2 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="https://cf.shopee.vn/file/da59cc307421b9f4744f2dca4fdf5cd9" class="card-img-top" alt="Sản phẩm">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">Bình Tưới Cây</h5>
+                                <p class="text-price">85.000 ₫</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sản phẩm 3 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="https://tse1.mm.bing.net/th/id/OIP.K5-wxwhNTYT0xCfdQNiUcwHaHa?r=0&pid=Api&P=0&h=180" class="card-img-top" alt="Sản phẩm">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">Chậu Gốm Sứ</h5>
+                                <p class="text-price">120.000 ₫</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sản phẩm 4 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 shadow-sm border-0">
+                            <img src="https://loctroi.vn/UploadFiles/HinhDaiDien/271022025609176_VIAN.jpg" class="card-img-top" alt="Sản phẩm">
+                            <div class="card-body text-center">
+                                <h5 class="fw-bold">Phân Bón Hữu Cơ</h5>
+                                <p class="text-price">50.000 ₫</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <a class="come-cart d-block text-center" href="../product/product.html">Xem tất cả sản phẩm</a>
+        </section>
+
+    <footer class="bg-primary-custom text-white mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>GreenCare</h5>
+                    <p class="small footer-text-light">Phụ kiện chăm sóc cây cảnh cao cấp cho mọi nhà</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h6>Liên Kết</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="../info/info.html" class="footer-text">Về Chúng Tôi</a></li>
+                        <li><a href="../info/info.html" class="footer-text">Chính Sách Bảo Mật</a></li>
+                        <li><a href="../info/info.html" class="footer-text">Điều Khoản Dịch Vụ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6>Liên Hệ</h6>
+                    <p class="small footer-text-light">Email: info@greencare.com<br>Phone: 1900 1234</p>
+                </div>
+            </div>
+            <hr class="border border-light-subtle">
+            <p class="text-center small mb-0 footer-text-light">&copy; 2024 GreenCare. Bảo lưu mọi quyền.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>    <script src="../data.js"></script>
+    <script src="../cart.js"></script>
+    
+</body>
+</html>
